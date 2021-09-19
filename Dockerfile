@@ -5,7 +5,11 @@ RUN apk add python3 py3-pip zeromq-dev
 # Install dependecies nedded for jupyter
 RUN apk add bash bzip2 ca-certificates curl file gcc g++ git libressl \
     libsodium-dev make openssh-client patch readline-dev tar tini wget \
-    python3-dev libffi-dev
+    python3-dev libffi-dev zlib zlib-dev jpeg-dev
+
+# Configure python
+RUN pip3 install wheel
+RUN pip3 install --upgrade setuptools
 
 WORKDIR /app
 COPY requirements.txt .
