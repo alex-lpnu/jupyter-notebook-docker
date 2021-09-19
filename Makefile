@@ -7,10 +7,7 @@ build:
 
 .PHONY: create-container
 create-container:
-	$(SU) docker run -d -v $(PWD):/notebooks -p 8888:8888 --name $(CONTAINR_NAME) $(IMAGE_NAME)
-	
-	# Print startup output (including the access URL)
-	$(SU) docker logs $(CONTAINR_NAME)
+	$(SU) docker run -d -v $(PWD):/notebooks -p 80:8888 --name $(CONTAINR_NAME) $(IMAGE_NAME)
 
 .PHONY: stop
 stop: 
