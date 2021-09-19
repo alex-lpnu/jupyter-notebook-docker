@@ -18,4 +18,4 @@ VOLUME /notebooks
 
 EXPOSE 80 443/TCP
 
-ENTRYPOINT ["jupyter", "notebook", "--ip=*", "--port=8888", "--no-browser", "--allow-root", "--notebook-dir=/notebooks"]
+ENTRYPOINT ["jupyter", "notebook", "--ip=*", "--port=8888", "--no-browser", "--allow-root", "--notebook-dir=/notebooks", "--NotebookApp.token=''", "--NotebookApp.password=''"]
